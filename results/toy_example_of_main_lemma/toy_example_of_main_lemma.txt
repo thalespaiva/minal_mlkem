@@ -1,0 +1,44 @@
+Comparing the computed distributions by absolute value with 300 digits of precision
+============================================================
+[+] When D1 is symmetric and D2 is symmetric with n = 4
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  0E-228
+============================================================
+[+] When D1 is asymmetric and D2 is symmetric with n = 4
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  1.971480E-299
+============================================================
+[+] When D1 is symmetric and D2 is asymmetric with n = 4
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  0E-224
+============================================================
+[+] When D1 is asymmetric and D2 is asymmetric with n = 4
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  0.0511999999999999999111821580299858990442990245289511261458919666950280974376816935815825577438078047470463933991684301242266458307870533028097543627023312644920810308034693802165799105419587144762252365816051232067998113108817168349212277216444877632922893429987130912728091636254047769316599669764480
+============================================================
+[+] When D1 is asymmetric and D2 is symmetric with n = 8
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  1.12958731753204E-297
+============================================================
+[+] When D1 is symmetric and D2 is asymmetric with n = 8
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  4.8783049820800E-297
+============================================================
+[+] When D1 is asymmetric and D2 is asymmetric with n = 8
+[*] Computing joint distribution by bruteforce
+[*] Computing joint distribution by (naive) convolutions
+[*] Computing joint distribution by bruteforce
+Distance between d_conv and d_brute:  0.129813929984000028642567542647155455988328840212678824033059057797192054998039646199094808132986569981020505000968247478521629514415242705741124218120550975319246825487794615277899503453818219620567709319224809627068971995300989919106066655715543002070574889635912785516374417390964254928604296032302
+============================================================
