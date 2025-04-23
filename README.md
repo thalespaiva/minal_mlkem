@@ -10,8 +10,6 @@ In this README, we present a guide to explore the repository, together with dire
 instructions on how to reproduce all the results in the paper.
 This repository will be made publicly available after the reviewing process is done.
 
-**This file is also provided in HTML format as README.html, which is more convenient for reading.**
-
 ## Important notices
 
 **1. External code:**
