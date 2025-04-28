@@ -1,14 +1,16 @@
 # Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations
 
-> Paiva, Thales B., Marcos A. Simplicio Jr, Syed Mahbub Hafiz, Bahattin Yildiz, Eduardo L. Cominetti, and Henrique S. Ogawa. "Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations." IACR Transactions on Cryptographic Hardware and Embedded Systems (2022): To appear.
+> Thales B. Paiva, Marcos A. Simplicio Jr, Syed Mahbub Hafiz, Bahattin Yildiz, Eduardo L. Cominetti, and Henrique S. Ogawa. "Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations." IACR Transactions on Cryptographic Hardware and Embedded Systems (2022): To appear.
 
 The paper can also be downloaded from eprint at:
 https://eprint.iacr.org/2024/1243.pdf
 
-**Abstract.** This repository contains the code and data associated with our paper.
-In this README, we present a guide to explore the repository, together with direct
-instructions on how to reproduce all the results in the paper.
-This repository will be made publicly available after the reviewing process is done.
+
+**Abstract**. This repository contains the code and data associated with our paper "Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations", to appear in IACR TCHES 2025. Our implementation includes 3 main components: (i) code to fully reproduce the DFR analysis for 2D and 4D codes when applied to ML-KEM, (ii) general implementation of Minal codes encoding and decoding for dimensions between 2D and 10D, and (iii) integration of Minal codes (2D and 4D) into ML-KEM's code. Additionally, we also include the code to reproduce the figures in the paper, as we believe that the visualization tools can be useful for further investigations of the properties of our codes.
+
+* To run a 2h (on a normal PC) functionality test see [this section](#quick-functionality-test).
+* For the 30h (on a powerful server) full reproduction see [this section](#reproducing-the-results).
+
 
 ## Important notices
 
@@ -46,8 +48,8 @@ different than 24** to be absolutely exact, but the differences should be neglig
 
 **3. Running scripts.** All scripts should be called from the project's root.
 
-**4. TLDR.** We provide a script `reproduce_me.sh` for full reproduction. One caveat: it creates ~1GB of files
-and takes about 20 hours to run on a server with 2x Intel Xeon Gold 5118 CPU @ 2.30GHz
+**4. TLDR.** We provide a script `reproduce_me.sh` for full reproduction. One caveat: it creates around
+1GB of files and takes about 20 hours to run on a server with 2x Intel Xeon Gold 5118 CPU @ 2.30GHz
 (24 cores, 48 threads), with 64GB of RAM, (using `export OMP_NUM_THREADS=24`).
 
 
@@ -116,7 +118,7 @@ and should be available in the official repositories of major Linux distribution
 **Tools**
 
 * CMake
-* gcc or clang
+* gcc
 * Python3 + `matplotlib` + `seaborn` + `pandas` + `numpy` + `scipy`
 * Optional: `Pipenv` for easier installation of the same versions we used
 
@@ -170,6 +172,40 @@ $ ./reproduce_me.sh reproduced_results
 
 All programs are called with `tee` so the command above will write a lot to `stdout`,
 which should give you some information in case a problem occurs.
+
+
+## Quick functionality test
+
+The full reproduction takes too long.
+In case you want to test if our code is functioning in your system with a quicker, we prepared
+a smaller experiment that can be ran with the `test_functional.sh` script.
+
+For this test, we can run the following commands in a fresh Ubuntu t2.2xlarge EC2 AWS instance with 8
+vCPUs and 32GB of RAM.
+
+```
+$ sudo apt update
+$ sudo apt install g++ cmake libmpc-dev libmpfr-dev python3-numpy
+$ git clone https://github.com/thalespaiva/minal_mlkem
+$ cd minal_mlkem
+$ export OMP_NUM_THREADS=24
+$ ./test_functional.sh reproduced_partial_results
+```
+
+This will run the performance tests, but, most importantly, will run some selected examples
+for the 2D and 4D DFR computation.
+In particular, the following files will be created:
+
+* `reproduced_partial_results/results/kyber2d_dfr/test_functional_result_kyber2d_dfr.csv`
+* `reproduced_partial_results/results/kyber4d_dfr/test_functional_result_kyber4d_dfr.csv`
+
+These two should exactly match the files that are provided in this repo.
+
+* `results/test_functional/test_functional_result_kyber2d_dfr.csv`
+* `results/test_functional/test_functional_result_kyber4d_dfr.csv`
+
+If the files match exactly, then you should be able to reproduce all the results exactly.
+Otherwise, verify that you are indeed using `export OMP_NUM_THREADS=24`.
 
 
 # Short guide to the code
