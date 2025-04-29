@@ -1,6 +1,6 @@
 # Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations
 
-> Thales B. Paiva, Marcos A. Simplicio Jr, Syed Mahbub Hafiz, Bahattin Yildiz, Eduardo L. Cominetti, and Henrique S. Ogawa. "Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations." IACR Transactions on Cryptographic Hardware and Embedded Systems (2022): To appear.
+> Thales B. Paiva, Marcos A. Simplicio Jr, Syed Mahbub Hafiz, Bahattin Yildiz, Eduardo L. Cominetti, and Henrique S. Ogawa. "Tailorable codes for lattice-based KEMs with applications to compact ML-KEM instantiations." IACR Transactions on Cryptographic Hardware and Embedded Systems (2025): To appear.
 
 The paper can also be downloaded from eprint at:
 https://eprint.iacr.org/2024/1243.pdf
